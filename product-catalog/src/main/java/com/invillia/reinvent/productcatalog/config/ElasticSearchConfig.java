@@ -23,9 +23,6 @@ public class ElasticSearchConfig {
 
     @Bean
     public RestHighLevelClient elasticSearchClient() {
-
-        System.out.println(String.format("%s:%s", host, port));
-
         ClientConfiguration clientConfiguration = ClientConfiguration.builder()
                 .connectedTo(String.format("%s:%s", host, port))
                 .build();

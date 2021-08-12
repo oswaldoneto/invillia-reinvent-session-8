@@ -40,7 +40,8 @@ public class ProductCatalogController {
     @PostMapping
     public ProductDto createProduct(@RequestBody ProductDto productDto) {
         Product product = convertToEntity(productDto);
-        return convertToDto(product);
+        Product createdProduct = productCatalogService.createProduct(product);
+        return convertToDto(createdProduct);
     }
 
     private ProductDto convertToDto(Product product) {
